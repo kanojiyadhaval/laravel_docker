@@ -36,7 +36,7 @@ To stop the containers run `docker-compose kill`, and to remove them run `docker
 
 From the project root directory , enter following command to enter container shell
 
-    docker exec -it laravel_app_1 bash
+    docker exec -it laravel_docker_app_1 bash
     
 Run the following command to create Table schema and Seeds
 
@@ -45,7 +45,7 @@ Run the following command to create Table schema and Seeds
 
 ## REST API with Swagger demo
 
-   visit swagger url at http://127.0.0.1:8000/api/documentation
+   visit swagger url at http://127.0.0.1:8080/api/documentation
 
    
 In case of any query or concern, feel free to contact.
