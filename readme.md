@@ -13,11 +13,11 @@ Make sure you have [Docker](https://docs.docker.com/) installed and docker-compo
 
  Clone the repo
 
-    git clone https://github.com/kanojiyadhaval/laravel_docker_api_demo.git
+    git clone https://github.com/kanojiyadhaval/laravel_docker.git
 
  Change directory
 
-    cd laravel_docker_api_demo
+    cd laravel_docker
   
  Spin Up project container
     docker-compose up -d

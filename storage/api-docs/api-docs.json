@@ -1,0 +1,125 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Products info API",
+        "version": "1.0.0"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/products": {
+            "get": {
+                "summary": "List all products",
+                "operationId": "index",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "404": {
+                        "description": "Bad Request"
+                    },
+                    "422": {
+                        "description": "Unsupported content type. Supports only application/json or Unprocessable Entity"
+                    },
+                    "500": {
+                        "description": "Whoops, looks like something went wrong"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Save product",
+                "operationId": "store",
+                "parameters": [
+                    {
+                        "name": "product",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "404": {
+                        "description": "Bad Request"
+                    },
+                    "422": {
+                        "description": "Unsupported content type. Supports only application/json or Unprocessable Entity"
+                    },
+                    "500": {
+                        "description": "Whoops, looks like something went wrong"
+                    }
+                }
+            }
+        },
+        "/products/{id}": {
+            "get": {
+                "summary": "List product by id",
+                "operationId": "show",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Targeted product id.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "404": {
+                        "description": "Bad Request"
+                    },
+                    "422": {
+                        "description": "Unsupported content type. Supports only application/json or Unprocessable Entity"
+                    },
+                    "500": {
+                        "description": "Whoops, looks like something went wrong"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Product": {
+            "required": [
+                "title",
+                "price",
+                "stock"
+            ],
+            "properties": {
+                "title": {
+                    "description": "Product Title",
+                    "type": "string"
+                },
+                "price": {
+                    "description": "Product Price",
+                    "type": "double"
+                },
+                "stock": {
+                    "description": "Product Stock",
+                    "type": "double"
+                },
+                "abstract": {
+                    "type": "text"
+                },
+                "description": {
+                    "type": "text"
+                },
+                "image_url": {
+                    "type": "text"
+                },
+                "created_at": {
+                    "type": "datetime"
+                },
+                "updated_at": {
+                    "type": "datetime"
+                }
+            }
+        }
+    }
+}
