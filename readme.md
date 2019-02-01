@@ -20,6 +20,7 @@ Make sure you have [Docker](https://docs.docker.com/) installed and docker-compo
     cd laravel_docker
   
  Spin Up project container
+ 
     docker-compose up -d
     
    This builds the containers and runs them in the background, while this
